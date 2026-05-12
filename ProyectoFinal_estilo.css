@@ -1,0 +1,272 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar{
+    opacity: 0;
+    scrollbar-width: thin;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: rgb(155, 155, 155);
+    border-radius: 20px;
+    width: 1px;
+    height: 1px;
+}
+body::-webkit-scrollbar-track{
+    background: linear-gradient(180deg,black,rgb(71, 71, 71));
+}
+header{
+    width: 200.4vh;
+    height: 15vh;
+    background-color: rgb(43, 43, 43);
+}
+main{
+    height: 110vh;
+    background: linear-gradient(135deg,black,rgb(124, 124, 124));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.primero{
+    height: 100%;
+    width: 33.3%;
+    background-color: transparent;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 0;
+    overflow-y: auto;
+    gap: 20px;
+}
+.primero::-webkit-scrollbar{
+    opacity: 0;
+}
+.segundo{
+    height: 100%;
+    width: 33.3%;
+    background-color: transparent;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 0;
+    overflow-y: auto;
+    gap: 20px;
+}
+.segundo::-webkit-scrollbar{
+    opacity: 0;
+}
+.tercero{
+    height: 100%;
+    width: 33.4%;
+    background-color: transparent;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 0;
+    overflow-y: auto;
+    gap: 20px;
+}
+.tercero::-webkit-scrollbar{
+    opacity: 0;
+}
+footer{
+    height: 15vh;
+    background: linear-gradient(45deg,rgb(83, 83, 83),rgb(37, 35, 35));
+}
+.juegos{
+    height: 300px;
+    width: 200px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px black;
+    background-size: 100% 100%;
+    background-position: center;
+    transform: scale(1,1);
+    border: 0px  transparent;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.juegos:hover{
+    transform: scale(1.05,1.05);
+    border: 1px solid white;
+    box-shadow: 0 0 20px whitesmoke;
+}
+#a1{
+    background-image: url(../indexImagenes/helldivers2\(1\).jpg);
+}
+#a2{
+    background-image: url(../indexImagenes/arc\ raiders.png);
+}
+#a3{
+    background-image: url(../indexImagenes/warframe.jpg);
+}
+#a4{
+    background-image: url(../indexImagenes/metroexodus.png);
+}
+#a5{
+    background-image: url(../indexImagenes/cyberpunk-2077.jpg);
+}
+#a6{
+    background-image: url(../indexImagenes/horizon\ zero\ dawn.jpg);
+}
+#a7{
+    background-image: url(../indexImagenes/pragmata.jpg);
+}
+#a8{
+    background-image: url(../indexImagenes/rdr2.jpg);
+}
+#h1{
+    background-image: url(../indexImagenes/dead\ space.jpg);
+}
+#h2{
+    background-image: url(../indexImagenes/metro233\(1\).jpg);
+}
+#h3{
+    background-image: url(../indexImagenes/Little_Nightmares_Box_Art.png);
+}
+#h4{
+    background-image: url(../indexImagenes/game--five-nights-at-freddys-4.webp);
+}
+#h5{
+    background-image: url(../indexImagenes/Resident_Evil_4_remake_cover_art.jpg);
+}
+#h6{
+    background-image: url(../indexImagenes/Outlast2.png);
+}
+#h7{
+    background-image: url(../indexImagenes/Dredge_Cover_Art.jpg);
+}
+#h8{
+    background-image: url(../indexImagenes/TheForest_Game.jpg);
+}
+#s1{
+    background-image: url(../indexImagenes/Sons_of_the_Forest.jpg);
+}
+#s2{
+    background-image: url(../indexImagenes/subnauticacover.jpg);
+}
+#s3{
+    background-image: url(../indexImagenes/asa.jpg);
+}
+#s4{
+    background-image: url(../indexImagenes/rust.jpg);
+}
+#s5{
+    background-image: url(../indexImagenes/Don\'t_Starve_cover.jpg);
+}
+#s6{
+    background-image: url(../indexImagenes/no\ mans\ sky.jpg);
+}
+#s7{
+    background-image: url(../indexImagenes/Day_Z_cover.jpg);
+}
+#s8{
+    background-image: url(../indexImagenes/minecraft.jpg);
+}
+.primero h1{
+    padding: 0 140px;
+    margin: 20px 0 0 0;
+}
+.segundo h1{
+    padding: 0 140px;
+    margin: 20px 0 0 0;
+}
+.tercero h1{
+    padding: 0 140px;
+    margin: 20px 0 0 0;
+}
+#fondojuegos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    pointer-events: none;
+}
+#fondojuegos.activo{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 999;
+}
+.juegosmodal{
+    width: 75%;
+    height: 75%;
+    background: linear-gradient(180deg,rgb(122, 122, 122),rgb(73, 73, 73));
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+}
+#botonsalir{
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(45deg, black,rgb(194, 194, 194));
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 25px;
+    border-radius: 10px;
+}
+#botoncomprar{
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(45deg, black,rgb(194, 194, 194));
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 25px;
+    border-radius: 10px;
+}
+.invisible{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+}
+.invisible2{
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+}
+.scrolleable{
+    width: 30%;
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    text-align: justify;
+    color: aliceblue;
+    font-size: 25px;
+}
+.scrolleable ::-webkit-scrollbar{
+    opacity: 0;
+}
+video{
+    width: 500px;
+    height: 500px;
+}
