@@ -1,8 +1,24 @@
 //Variableshelldivers 2 propaganda trailerd
 const juegos = document.querySelectorAll('.juegos');
 let botonsalir="";
+let botonsalir2 = document.querySelector('.botonsalir2');
+let botonsalir3 = document.querySelector('.botonsalir3');
 const fondojuegos = document.getElementById('fondojuegos');
 const juegosmodal = document.getElementById('juegosmodal');
+const biblioteca = document.querySelector('.bbteca');
+const fondobbteca = document.querySelector('.fondobbteca');
+const bbtecamodal = document.querySelector('.bbtecamodal');
+const cartera = document.querySelector('.cartera');
+const fondocartera = document.querySelector('.fondocartera');
+const carteramodal = document.querySelector('carteramodal');
+const zonasuperior = document.querySelector('.zonasuperior');
+const imgpequeñas = document.querySelectorAll('.imgpequeñas');
+const saldo = document.querySelector('.saldo');
+const ingresos = document.querySelector('.ingresos');
+let textocartera = document.querySelector('.textocartera');
+let saldovisible = document.querySelector('.saldovisible');
+const botoningresar = document.querySelector('.botoningresar');
+const selectmoneda = document.querySelector('.moneda');
 
 let juego1 = document.getElementById('a1');
 let juego2 = document.getElementById('a2');
@@ -30,7 +46,11 @@ let juego23 = document.getElementById('s7');
 let juego24 = document.getElementById('s8');
 
 //Eventos
-//juegos.addEventListener ('click',()=>clickjuegos(fondojuegos,true));
+biblioteca.addEventListener ('click',()=>clickjuegos(fondobbteca,true));
+botonsalir2.addEventListener ('click',()=>clickjuegos(fondobbteca,false));
+cartera.addEventListener ('click',()=>clickcartera(fondocartera,true));
+botonsalir3.addEventListener ('click',()=>clickjuegos(fondocartera,false));
+botoningresar.addEventListener ('click',ingresarsaldo);
 
 
 cargar();
@@ -60,15 +80,21 @@ juego22.addEventListener ('click',()=>detallesjuegos(juego22));
 juego23.addEventListener ('click',()=>detallesjuegos(juego23));
 juego24.addEventListener ('click',()=>detallesjuegos(juego24));
 
+if(saldo.value==""){
+    saldo.value=0;
+    saldovisible.textContent=`0${selectmoneda.value}`;
+}
 
 
+
+//Funciones
 function cargar(){
     
     for(let i=0;i<juegos.length;i++){
        juegos[i].addEventListener ('click',()=>clickjuegos(fondojuegos,true));
     }
 }
-//Funciones
+
 function clickjuegos(ventanajuego,entrar){
     
     if(entrar===true){
@@ -97,4 +123,66 @@ function detallesjuegos(juego){
     </div>`;
     botonsalir = document.querySelector('#botonsalir');
     botonsalir.addEventListener ('click',()=>clickjuegos(fondojuegos,false));
+    let botoncomprar = document.querySelector('#botoncomprar');
+    botoncomprar.addEventListener ('click',()=>comprarjuego(juego));
 }
+
+function clickbiblioteca(ventanabbteca,entrar){
+    if(entrar===true){
+        ventanabbteca.classList.add('activo');
+    }else{
+        ventanabbteca.classList.remove('activo');
+    }
+}
+function clickcartera(ventanacartera,entrar){
+    if(entrar===true){
+        ventanacartera.classList.add('activo');
+    }else{
+        ventanacartera.classList.remove('activo');
+        textocartera.textContent="";
+        ingresos.value="";
+        alert('nose');
+    }
+}
+
+function comprarjuego(juegoseleccionado) {
+    const nombreJuego = juegoseleccionado.getAttribute("data-nombre");
+    const rutaImagen = juegoseleccionado.getAttribute("data-imagen");
+
+
+    const existe = zonasuperior.querySelector(`img[data-nombre="${nombreJuego}"]`);
+
+    
+    if (existe) {
+        alert('Este juego ya ha sido añadido.');
+        return;
+    }else if(Number(saldo.value)<Number(juegoseleccionado.getAttribute('data-valor'))){
+        alert('Saldo insuficiente.');
+        return;
+    }else if(Number(saldo.value)>=Number(juegoseleccionado.getAttribute('data-valor'))){
+        alert('Juego comprado!');
+        saldoactual = Number(saldo.value) - Number(juegoseleccionado.getAttribute('data-valor'));
+        saldo.value = saldoactual;
+        saldovisible.textContent = `${saldoactual}${selectmoneda.value}`;
+    }
+
+    const nuevaimg = document.createElement('img');
+    nuevaimg.classList.add('imgpequeñas');
+    nuevaimg.setAttribute("src", rutaImagen);
+    nuevaimg.setAttribute("data-nombre", nombreJuego); 
+    zonasuperior.appendChild(nuevaimg);
+}
+
+function ingresarsaldo(){
+    let saldoactual = Number(saldo.value);
+    if(Number(ingresos.value)<0){
+        textocartera.textContent = "El ingreso no puede ser negativo";
+    }else if(Number(ingresos.value==0)){
+        textocartera.textContent = "Porfavor introduce una cantidad a ingresar";
+    }else{
+        saldoactual = Number(saldo.value) + Number(ingresos.value);
+        saldo.value = saldoactual;
+        saldovisible.textContent = `${saldoactual}${selectmoneda.value}`;
+        
+    }
+} 
