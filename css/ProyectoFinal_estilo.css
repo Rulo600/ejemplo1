@@ -1,0 +1,795 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+body::-webkit-scrollbar{
+    opacity: 0;
+    scrollbar-width: thin;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: rgb(155, 155, 155);
+    border-radius: 20px;
+    width: 1px;
+    height: 1px;
+}
+body::-webkit-scrollbar-track{
+    background: linear-gradient(180deg,black,rgb(71, 71, 71));
+}
+header{
+    height: 15vh;
+    background: linear-gradient(360deg,rgb(37, 35, 37),rgb(83, 83, 83));
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+main{
+    height: 110vh;
+    background: linear-gradient(135deg,black,rgb(124, 124, 124));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.primero{
+    height: 100%;
+    width: 33.3%;
+    background-color: transparent;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 0;
+    overflow-y: auto;
+    gap: 20px;
+}
+.primero::-webkit-scrollbar{
+    opacity: 0;
+}
+.segundo{
+    height: 100%;
+    width: 33.3%;
+    background-color: transparent;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 0;
+    overflow-y: auto;
+    gap: 20px;
+}
+.segundo::-webkit-scrollbar{
+    opacity: 0;
+}
+.tercero{
+    height: 100%;
+    width: 33.4%;
+    background-color: transparent;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 0;
+    overflow-y: auto;
+    gap: 20px;
+}
+.tercero::-webkit-scrollbar{
+    opacity: 0;
+}
+footer{
+    height: 15vh;
+    background: linear-gradient(45deg,rgb(83, 83, 83),rgb(37, 35, 35));
+}
+.juegos{
+    height: 300px;
+    width: 200px;
+    margin: 20px 0;
+    box-shadow: 0 0 20px black;
+    background-size: 100% 100%;
+    background-position: center;
+    transform: scale(1,1);
+    border: 0px  transparent;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+.juegos:hover{
+    transform: scale(1.05,1.05);
+    border: 1px solid white;
+    box-shadow: 0 0 20px whitesmoke;
+}
+#a1{
+    background-image: url(../indexImagenes/helldivers2\(1\).jpg);
+}
+#a2{
+    background-image: url(../indexImagenes/arc\ raiders.png);
+}
+#a3{
+    background-image: url(../indexImagenes/warframe.jpg);
+}
+#a4{
+    background-image: url(../indexImagenes/metroexodus.png);
+}
+#a5{
+    background-image: url(../indexImagenes/cyberpunk-2077.jpg);
+}
+#a6{
+    background-image: url(../indexImagenes/horizon\ zero\ dawn.jpg);
+}
+#a7{
+    background-image: url(../indexImagenes/pragmata.jpg);
+}
+#a8{
+    background-image: url(../indexImagenes/rdr2.jpg);
+}
+#h1{
+    background-image: url(../indexImagenes/dead\ space.jpg);
+}
+#h2{
+    background-image: url(../indexImagenes/metro233\(1\).jpg);
+}
+#h3{
+    background-image: url(../indexImagenes/Little_Nightmares_Box_Art.png);
+}
+#h4{
+    background-image: url(../indexImagenes/game--five-nights-at-freddys-4.webp);
+}
+#h5{
+    background-image: url(../indexImagenes/Resident_Evil_4_remake_cover_art.jpg);
+}
+#h6{
+    background-image: url(../indexImagenes/Outlast2.png);
+}
+#h7{
+    background-image: url(../indexImagenes/Dredge_Cover_Art.jpg);
+}
+#h8{
+    background-image: url(../indexImagenes/TheForest_Game.jpg);
+}
+#s1{
+    background-image: url(../indexImagenes/Sons_of_the_Forest.jpg);
+}
+#s2{
+    background-image: url(../indexImagenes/subnauticacover.jpg);
+}
+#s3{
+    background-image: url(../indexImagenes/asa.jpg);
+}
+#s4{
+    background-image: url(../indexImagenes/rust.jpg);
+}
+#s5{
+    background-image: url(../indexImagenes/Don_t_Starve_cover.jpg);
+}
+#s6{
+    background-image: url(../indexImagenes/no\ mans\ sky.jpg);
+}
+#s7{
+    background-image: url(../indexImagenes/Day_Z_cover.jpg);
+}
+#s8{
+    background-image: url(../indexImagenes/minecraft.jpg);
+}
+.primero h1{
+    padding: 0 140px;
+    margin: 20px 0 0 0;
+}
+.segundo h1{
+    padding: 0 140px;
+    margin: 20px 0 0 0;
+}
+.tercero h1{
+    padding: 0 140px;
+    margin: 20px 0 0 0;
+}
+#fondojuegos{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    pointer-events: none;
+}
+#fondojuegos.activo{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 999;
+}
+.juegosmodal{
+    width: 75%;
+    height: 75%;
+    background: linear-gradient(180deg,rgb(122, 122, 122),rgb(73, 73, 73));
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+    text-shadow: 0px 10px 10px black;
+}
+#botonsalir{
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(45deg, black,rgb(160, 160, 160));
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    transition: all 0.8s;
+}
+#botonsalir:hover{
+    transform: translate(0,-15px);
+}
+#botoncomprar{
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(-45deg, black,rgb(160, 160, 160));
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px black;
+    transition: all 0.8s;
+}
+#botoncomprar:hover{
+    transform: translate(0,-15px);
+}
+.invisible{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+}
+.invisible2{
+    width: 100%;
+    height: 7%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: transparent;
+}
+.scrolleable{
+    width: 30%;
+    height: 100%;
+    min-height: 0;
+    padding: 15px 5px;
+    overflow-y: auto;
+    text-align: justify;
+    color: aliceblue;
+    font-size: 25px;
+}
+.scrolleable ::-webkit-scrollbar{
+    opacity: 0;
+}
+video{
+    width: 533px;
+    height: 300px;
+    box-shadow: 0 0 15px black;
+}
+.bbteca{
+    background-color: rgb(90, 90, 90);
+    width: 200px;
+    height: 60px;
+    padding: 20px;
+    color: aliceblue;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 transparent;
+    transition: border 1s, box-shadow 2s;
+}
+.bbteca:hover{
+    border: 1px solid white;
+    box-shadow: 0 0 35px honeydew;
+}
+.logo{
+    width: 8%;
+    height: 100%;
+    background-image: url(../indexImagenes/Gameria1.png);
+    background-size: 100% 100%;
+    border-radius: 0 20px 20px 0;
+}
+.fondobbteca{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    pointer-events: none;
+}
+.fondobbteca.activo{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 999;
+}
+.bbtecamodal{
+    width: 60%;
+    height: 80%;
+    background: linear-gradient(180deg,rgb(122, 122, 122),rgb(73, 73, 73));
+    border-radius: 25px;
+}
+.botonsalir2{
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(45deg, black,rgb(160, 160, 160));
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 25px;
+    border-radius: 10px;
+    margin: 0 450px;
+    box-shadow: 0 0 10px black;
+    text-shadow: 0px 10px 10px black;
+    transition: all 0.8s;
+}
+.botonsalir2:hover{
+    transform: translate(0,-15px);
+}
+.cartera{
+    background-color: rgb(90, 90, 90);
+    width: 200px;
+    height: 60px;
+    padding: 20px;
+    color: aliceblue;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    box-shadow: 0 0 0 transparent;
+    transition: border 1s, box-shadow 2s;
+}
+.cartera:hover{
+    border: 1px solid white;
+    box-shadow: 0 0 35px honeydew;
+}
+.fondocartera{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    pointer-events: none;
+}
+.fondocartera.activo{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    z-index: 999;
+}
+.carteramodal{
+    width: 50%;
+    height: 60%;
+    background: linear-gradient(180deg,rgb(122, 122, 122),rgb(73, 73, 73));
+    border-radius: 25px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    color: aliceblue;
+}
+.botonsalir3{
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(-45deg, black,rgb(160, 160, 160));
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 25px;
+    border-radius: 10px;
+    transition: all 0.8s;
+    box-shadow: 0 0 10px black;
+}
+.botonsalir3:hover{
+    transform: translate(0,-15px);
+}
+.imgpequeñas{
+    height: 220px;
+    width: 145px;
+    filter: blur(5px);
+    transition: all 1s;
+}
+.imgpequeñas:hover{
+    filter: blur(0px);
+}
+.zonainferior{
+    width: 100%;
+    height: 35%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.zonasuperior{
+    width: 100%;
+    height: 65%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    color: aliceblue;
+    overflow-y: auto;
+    min-height: 0; 
+}
+.zonainferior2{
+    width: 100%;
+    height: 35%;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-shadow: 0px 10px 10px black;
+}
+.zonasuperior2{
+    width: 100%;
+    height: 65%;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px;
+    align-items: center;
+    color: aliceblue;
+    text-shadow: 0px 10px 10px black;
+    flex-direction: column;
+}
+.botoningresar{
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(45deg, black,rgb(160, 160, 160));
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    font-size: 25px;
+    border-radius: 10px;
+    transition: all 0.8s;
+    
+    box-shadow: 0 0 10px black;
+}
+.botoningresar:hover{
+    transform: translate(0,-15px);
+}
+.saldo{
+    padding: 20px 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgb(136, 136, 136), rgb(206, 205, 205));
+    flex: 0.2;
+}
+.ingresos{
+    padding: 20px 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, rgb(136, 136, 136), rgb(206, 205, 205));
+    flex: 0.2;
+
+}
+.zonasaldo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex: 1;
+}
+.zonaingresos{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex: 1;
+}
+.zonasuperior2 h2{
+    flex: 0.2;
+}
+.zonadinero{
+    width: 400px;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    color: aliceblue;
+}
+.moneda{
+    border: 2px solid rgb(170, 170, 170);
+    border-radius: 10px;
+    color: white;
+    background-color: rgb(77, 77, 77);
+}
+#login{
+    transform: scale(3,3);
+    color: aliceblue;
+    filter: brightness(30%);
+    transition: all 2s;
+    cursor: pointer;
+}
+#login:hover{
+    filter: brightness(150%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Escalado fluido de escritorio basado en 1920x1080 */
+@media (min-width: 1025px) {
+    :root {
+        --u: 0.0520833333vw;
+    }
+
+    .juegos {
+        width: calc(200 * var(--u));
+        height: calc(300 * var(--u));
+        margin: calc(20 * var(--u)) 0;
+        box-shadow: 0 0 calc(20 * var(--u)) black;
+    }
+
+    .juegos:hover {
+        box-shadow: 0 0 calc(20 * var(--u)) whitesmoke;
+    }
+
+    .primero,
+    .segundo,
+    .tercero {
+        gap: calc(20 * var(--u));
+    }
+
+    .primero h1,
+    .segundo h1,
+    .tercero h1 {
+        padding: 0 calc(160 * var(--u));
+        margin: calc(20 * var(--u)) 0 0 0;
+    }
+
+    .bbteca,
+    .cartera {
+        width: calc(200 * var(--u));
+        height: calc(60 * var(--u));
+        padding: calc(20 * var(--u));
+        border-radius: calc(20 * var(--u));
+    }
+
+    .zonadinero {
+        width: calc(400 * var(--u));
+    }
+
+    .juegosmodal,
+    .bbtecamodal,
+    .carteramodal {
+        border-radius: calc(25 * var(--u));
+    }
+
+    #botonsalir,
+    #botoncomprar,
+    .botonsalir2,
+    .botonsalir3,
+    .botoningresar {
+        width: calc(150 * var(--u));
+        height: calc(50 * var(--u));
+        font-size: calc(25 * var(--u));
+        border-radius: calc(10 * var(--u));
+        box-shadow: 0 0 calc(10 * var(--u)) black;
+    }
+
+    #botonsalir:hover,
+    #botoncomprar:hover,
+    .botonsalir2:hover,
+    .botonsalir3:hover,
+    .botoningresar:hover {
+        transform: translate(0, calc(-15 * var(--u)));
+    }
+
+    .botonsalir2 {
+        margin: 0 calc(450 * var(--u));
+    }
+
+    video {
+        width: calc(533 * var(--u));
+        height: calc(300 * var(--u));
+        box-shadow: 0 0 calc(15 * var(--u)) black;
+    }
+
+    .scrolleable {
+        padding: calc(15 * var(--u)) calc(5 * var(--u));
+        font-size: calc(25 * var(--u));
+    }
+
+    .zonasuperior,
+    .zonasuperior2 {
+        gap: calc(20 * var(--u));
+        padding: calc(30 * var(--u));
+    }
+
+    .zonasaldo,
+    .zonaingresos {
+        gap: calc(50 * var(--u));
+    }
+
+    .saldo,
+    .ingresos {
+        padding: calc(20 * var(--u)) calc(40 * var(--u));
+        border-radius: calc(10 * var(--u));
+    }
+
+    .imgpequeñas {
+        width: calc(145 * var(--u));
+        height: calc(220 * var(--u));
+        filter: blur(calc(5 * var(--u)));
+    }
+
+    #login {
+    font-size: calc(48 * var(--u));
+    transform: none;
+    }
+
+    .logo {
+        border-radius: 0 calc(20 * var(--u)) calc(20 * var(--u)) 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 1025px) {
+    :root {
+        --u: 0.0520833333vw;
+    }
+
+    body {
+        font-size: calc(16 * var(--u));
+    }
+
+    h1 {
+        font-size: calc(32 * var(--u));
+    }
+
+    h2 {
+        font-size: calc(24 * var(--u));
+    }
+
+    h3 {
+        font-size: calc(18.72 * var(--u));
+    }
+
+    .bbteca,
+    .cartera {
+        font-size: calc(16 * var(--u));
+    }
+
+    .saldovisible {
+        font-size: calc(24 * var(--u));
+    }
+
+    #login {
+        font-size: calc(48 * var(--u));
+        transform: none;
+    }
+
+    .juegos {
+        width: calc(200 * var(--u));
+        height: calc(300 * var(--u));
+        margin: calc(20 * var(--u)) 0;
+        box-shadow: 0 0 calc(20 * var(--u)) black;
+    }
+
+    .primero,
+    .segundo,
+    .tercero {
+        gap: calc(20 * var(--u));
+    }
+
+    .primero h1,
+    .segundo h1,
+    .tercero h1 {
+        padding: 0 calc(140 * var(--u));
+        margin: calc(20 * var(--u)) 0 0 0;
+    }
+
+    .bbteca,
+    .cartera {
+        width: calc(200 * var(--u));
+        height: calc(60 * var(--u));
+        padding: calc(20 * var(--u));
+        border-radius: calc(20 * var(--u));
+    }
+
+    .zonadinero {
+        width: calc(400 * var(--u));
+    }
+
+    #botonsalir,
+    #botoncomprar,
+    .botonsalir2,
+    .botonsalir3,
+    .botoningresar {
+        width: calc(150 * var(--u));
+        height: calc(50 * var(--u));
+        font-size: calc(25 * var(--u));
+        border-radius: calc(10 * var(--u));
+    }
+
+    .botonsalir2 {
+        margin: 0 calc(450 * var(--u));
+    }
+
+    video {
+        width: calc(533 * var(--u));
+        height: calc(300 * var(--u));
+    }
+
+    .scrolleable {
+        font-size: calc(25 * var(--u));
+        padding: calc(15 * var(--u)) calc(5 * var(--u));
+    }
+
+    .saldo,
+    .ingresos {
+        font-size: calc(16 * var(--u));
+        padding: calc(20 * var(--u)) calc(40 * var(--u));
+        border-radius: calc(10 * var(--u));
+    }
+
+    .moneda {
+        font-size: calc(16 * var(--u));
+    }
+}
