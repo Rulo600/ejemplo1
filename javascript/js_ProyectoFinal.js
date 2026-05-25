@@ -135,8 +135,10 @@ function detallesjuegos(juego){
 function clickbiblioteca(ventanabbteca,entrar){
     if(entrar===true){
         ventanabbteca.classList.add('activo');
+        document.body.style.overflow = "hidden";
     }else{
         ventanabbteca.classList.remove('activo');
+        document.body.style.overflow = "auto";
     }
 }
 function clickcartera(ventanacartera, entrar) {
