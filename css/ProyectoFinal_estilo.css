@@ -459,11 +459,14 @@ video{
     justify-content: center;
     gap: 20px;
     padding: 30px;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
     color: aliceblue;
     overflow-y: auto;
+    overflow-x: hidden;
     min-height: 0; 
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
 }
 .zonainferior2{
     width: 100%;
