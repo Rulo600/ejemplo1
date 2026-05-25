@@ -1042,3 +1042,47 @@ video{
         height: 140px;
     }
 }
+
+
+
+
+
+
+
+
+
+/* =============================== */
+/* ===== SCROLL BIBLIOTECA ======= */
+/* =============================== */
+
+.fondobbteca{
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.bbtecamodal{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.zonasuperior{
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 0;
+
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+}
+
+/* Scroll visual opcional */
+
+.zonasuperior::-webkit-scrollbar{
+    width: 6px;
+}
+
+.zonasuperior::-webkit-scrollbar-thumb{
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 20px;
+}
