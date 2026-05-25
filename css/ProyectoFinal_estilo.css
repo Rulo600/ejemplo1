@@ -276,9 +276,20 @@ footer{
     text-align: justify;
     color: aliceblue;
     font-size: 25px;
+
+    scrollbar-width: thin;
+    scrollbar-color: rgb(155, 155, 155) transparent;
 }
 .scrolleable ::-webkit-scrollbar{
-    opacity: 0;
+    width: 6px;
+}
+.scrolleable::-webkit-scrollbar-thumb{
+    background-color: rgb(155, 155, 155);
+    border-radius: 20px;
+}
+
+.scrolleable::-webkit-scrollbar-track{
+    background: transparent;
 }
 video{
     width: 533px;
