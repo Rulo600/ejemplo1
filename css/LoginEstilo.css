@@ -410,3 +410,253 @@
                 max-width: 270px;
             }
         }
+
+
+
+
+
+
+
+/* ========================================= */
+/* ======== MEJORAS RESPONSIVE EXTRA ======= */
+/* ========================================= */
+
+/* Tablets grandes */
+@media screen and (max-width: 1024px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    main{
+        padding: 40px 20px;
+        align-items: flex-start;
+    }
+
+    .contenedor-login{
+        width: 100%;
+        max-width: 500px;
+        min-height: 720px;
+    }
+
+    .zona-formularios{
+        min-height: 720px;
+    }
+
+    .formulario{
+        padding: 50px 35px 220px;
+    }
+
+    .formulario h1{
+        font-size: 38px;
+    }
+
+    .campo input{
+        height: 54px;
+        font-size: 17px;
+    }
+
+    .panel-cambio{
+        height: 210px;
+    }
+
+    .panel{
+        gap: 15px;
+    }
+
+    .panel p{
+        line-height: 1.5;
+    }
+}
+
+/* ========================================= */
+/* =============== MOVILES ================= */
+/* ========================================= */
+
+@media screen and (max-width: 768px){
+
+    main{
+        padding: 20px 15px;
+    }
+
+    .contenedor-login{
+        max-width: 100%;
+        min-height: 680px;
+        border-radius: 20px;
+    }
+
+    .zona-formularios{
+        min-height: 680px;
+    }
+
+    .formulario{
+        padding: 40px 25px 210px;
+        gap: 18px;
+    }
+
+    .formulario h1{
+        font-size: 34px;
+    }
+
+    .campo{
+        gap: 8px;
+    }
+
+    .campo label{
+        font-size: 18px;
+    }
+
+    .campo input{
+        height: 50px;
+        font-size: 16px;
+        padding: 0 15px;
+    }
+
+    .mensaje{
+        font-size: 15px;
+    }
+
+    .formulario button,
+    .panel button{
+        width: 100%;
+        max-width: 240px;
+        height: 52px;
+        font-size: 18px;
+    }
+
+    .panel-cambio{
+        height: 190px;
+        border-radius: 20px 20px 0 0;
+    }
+
+    .panel{
+        padding: 20px;
+    }
+
+    .panel i{
+        font-size: 38px;
+    }
+
+    .panel h2{
+        font-size: 26px;
+    }
+
+    .panel p{
+        font-size: 15px;
+        max-width: 250px;
+    }
+}
+
+/* ========================================= */
+/* =========== MOVILES PEQUEÑOS ============ */
+/* ========================================= */
+
+@media screen and (max-width: 480px){
+
+    main{
+        padding: 10px;
+    }
+
+    .contenedor-login{
+        min-height: 640px;
+        border-radius: 16px;
+    }
+
+    .zona-formularios{
+        min-height: 640px;
+    }
+
+    .formulario{
+        padding: 30px 18px 200px;
+        gap: 16px;
+    }
+
+    .formulario h1{
+        font-size: 28px;
+    }
+
+    .campo label{
+        font-size: 16px;
+    }
+
+    .campo input{
+        height: 46px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    .mensaje{
+        min-height: 20px;
+        font-size: 14px;
+    }
+
+    .formulario button,
+    .panel button{
+        height: 48px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .panel-cambio{
+        height: 170px;
+        border-radius: 16px 16px 0 0;
+    }
+
+    .panel{
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .panel i{
+        font-size: 32px;
+    }
+
+    .panel h2{
+        font-size: 22px;
+    }
+
+    .panel p{
+        font-size: 14px;
+        max-width: 220px;
+    }
+}
+
+/* ========================================= */
+/* ======== MOVILES MUY PEQUEÑOS =========== */
+/* ========================================= */
+
+@media screen and (max-width: 360px){
+
+    .contenedor-login{
+        min-height: 620px;
+    }
+
+    .zona-formularios{
+        min-height: 620px;
+    }
+
+    .formulario{
+        padding: 25px 14px 190px;
+    }
+
+    .formulario h1{
+        font-size: 24px;
+    }
+
+    .campo input{
+        height: 44px;
+        font-size: 14px;
+    }
+
+    .panel-cambio{
+        height: 160px;
+    }
+
+    .panel h2{
+        font-size: 20px;
+    }
+
+    .panel p{
+        font-size: 13px;
+    }
+}
